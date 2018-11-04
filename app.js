@@ -1,6 +1,8 @@
 var express = require('express');
-
 var app = express();
+var bodyParser = require('body-parser');
+
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 app.set('view engine', 'ejs');
 // adding middleware for static files.
@@ -46,6 +48,14 @@ app.get('/q', function(req, res){
 app.get('/contact', function(req, res){
   //console.log(req.query);
   res.render('contact', {qs: req.query});
+});
+
+//used this
+//var bodyParser = require('body-parser');
+//var urlencodedParser = bodyParser.urlencoded({extended: false});
+app.post('/contact', urlencodedParser, function(req, res){
+  //console.log(req.body);
+  res.render('contact-success', {data: req.body});
 });
 
 app.listen(3000);
