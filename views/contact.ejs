@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href = "/assets/styles.css" rel = "stylesheet" type = "text/css">
+  </head>
+  <body>
+    <% include partials/nav.ejs %>
+    <h1> Welcome! Profile </h1>
+    <p>Jhinga Jhinga Jhinga  Jhing </p>
+    <h2>II</h2>
+
+    <form id = "contact-form">
+      <label for = "who"> Whom to contact?</label>
+      <input type="text" name="who" value = "<%= qs.f1 %>" />
+      <label for = "dept"> Which Department?</label>
+      <input type="text" name="dept" value = "<%= qs.f2 %>" />
+      <label for = "email"> Yout Email!</label>
+      <input type="email" name="email" />
+      <input type="submit " value = "submit" />
+
+    </form>
+
+  </body>
+</html>

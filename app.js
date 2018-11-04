@@ -36,4 +36,16 @@ app.get('/profile/:name', function(req, res){
   });
 });
 
+app.get('/q', function(req, res){
+  //console.log(req.query);
+  res.render('q', {
+    qs: req.query
+  });
+});
+
+app.get('/contact', function(req, res){
+  //console.log(req.query);
+  res.render('contact', {qs: req.query});
+});
+
 app.listen(3000);
