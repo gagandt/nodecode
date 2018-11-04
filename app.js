@@ -3,6 +3,14 @@ var express = require('express');
 var app = express();
 
 app.set('view engine', 'ejs');
+// adding middleware for static files.
+/*app.use('assets/', function(req, res, next){
+  //console.log(req.url);
+  // custom route her, but we have an alternative!
+  next();
+});*/
+
+app.use('/assets', express.static('assets'));
 
 app.get('/', function(res, req){
   req.sendFile(__dirname + '/c/1.html');
