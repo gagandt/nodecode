@@ -14,4 +14,8 @@ app.get('/j', function(res, req){
   req.send(JSON.stringify({name: 'jjj', age: 18}));
 });
 
+app.get('/profile/:name', function(req, res){
+  res.send('Requested ID: ' + req.params.name);
+});
+
 app.listen(3000);
